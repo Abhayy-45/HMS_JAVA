@@ -86,7 +86,7 @@ public class HospitalManagementUI {
                     System.out.println("Exiting...");
                     return;
                 default:
-                    System.out.println("Invalid option. Try again.");
+                    System.out.println("Invalid option.");
             }
         }
     }
