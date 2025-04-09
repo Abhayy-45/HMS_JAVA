@@ -1,0 +1,9 @@
+com/dbms/model/Appointment.class
+com/dbms/model/Patient.class
+com/dbms/Main.class
+com/dbms/service/PatientService.class
+com/dbms/service/DoctorService.class
+com/dbms/ui/HospitalManagementUI.class
+com/dbms/model/Doctor.class
+com/dbms/service/AppointmentService.class
+com/dbms/BillingService.class
