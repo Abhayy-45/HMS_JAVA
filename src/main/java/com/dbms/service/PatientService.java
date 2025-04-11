@@ -1,7 +1,12 @@
 package com.dbms.service;
 
-import java.sql.*;
-import java.util.ArrayList;  // Import ArrayList
+import java.sql.Connection;
+import java.sql.PreparedStatement;  // Import ArrayList
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 import com.dbms.model.Patient;
 
 public class PatientService {
@@ -23,7 +28,6 @@ public class PatientService {
             stmt.executeUpdate();
             System.out.println("Patient added successfully.");
         } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
@@ -38,7 +42,6 @@ public class PatientService {
                 System.out.println("Patient not found.");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
@@ -69,7 +72,6 @@ public class PatientService {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 }

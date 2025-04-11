@@ -7,7 +7,7 @@ import com.dbms.model.Appointment;
 import com.dbms.model.Doctor;
 import com.dbms.model.Patient;
 import com.dbms.service.AppointmentService;
-import com.dbms.service.DoctorService;  // Import LocalDate for appointment date conversion
+import com.dbms.service.DoctorService;
 import com.dbms.service.PatientService;
 
 public class HospitalManagementUI {
@@ -47,12 +47,12 @@ public class HospitalManagementUI {
                     int page = sc.nextInt();
                     sc.nextLine(); // Consume newline
                     System.out.print("Enter Gender: ");
-                    String pgender = sc.nextLine(); // Added gender
+                    String pgender = sc.nextLine();
                     System.out.print("Enter Contact: ");
                     String pcontact = sc.nextLine();
                     System.out.print("Enter Disease: ");
                     String pdisease = sc.nextLine();
-                    Patient patient = new Patient(0, pname, page, pgender, pcontact, pdisease); // Match constructor with 5 parameters
+                    Patient patient = new Patient(0, pname, page, pgender, pcontact, pdisease);
                     patientService.addPatient(patient);
                 }
 
@@ -69,9 +69,11 @@ public class HospitalManagementUI {
                     String dname = sc.nextLine();
                     System.out.print("Enter Specialty: ");
                     String dspecialty = sc.nextLine();
+                    System.out.print("Enter Availability (e.g., Mon-Fri 9AM-5PM): ");
+                    String davailability = sc.nextLine(); // <-- Newly added input
                     System.out.print("Enter Contact: ");
                     String dcontact = sc.nextLine();
-                    Doctor doctor = new Doctor(0, dname, dspecialty, dcontact); // ID will be auto-generated
+                    Doctor doctor = new Doctor(0, dname, dspecialty, davailability, dcontact); // <-- Updated constructor
                     doctorService.addDoctor(doctor);
                 }
 
@@ -91,10 +93,10 @@ public class HospitalManagementUI {
                     sc.nextLine(); // Consume newline
                     System.out.print("Enter Date (yyyy-mm-dd): ");
                     String dateStr = sc.nextLine();
-                    LocalDate appointmentDate = LocalDate.parse(dateStr); // Convert String to LocalDate
+                    LocalDate appointmentDate = LocalDate.parse(dateStr);
                     System.out.print("Enter Appointment Status: ");
-                    String status = sc.nextLine(); // Add status input
-                    Appointment appointment = new Appointment(adid, apid, appointmentDate, status); // Using the correct constructor
+                    String status = sc.nextLine();
+                    Appointment appointment = new Appointment(adid, apid, appointmentDate, status);
                     appointmentService.addAppointment(appointment);
                 }
 
